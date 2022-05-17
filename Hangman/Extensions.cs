@@ -4,19 +4,13 @@ namespace Hangman
 {
     public class Extensions
     {
+        private static string WordToGuessUpper;
+        private static StringBuilder WordToGuessDash = new StringBuilder();
+
         public static void StartGame()
         {
-            Random random = new Random();
-            var loadListOfWords = ListOfWords.LoadListOfWords();
-            string wordToGuess = loadListOfWords[random.Next(0, loadListOfWords.Count - 1)];
-            string wordToGuessUpper = wordToGuess.ToUpper();
 
-            StringBuilder wordToGuessDash = new StringBuilder();
-
-            for (int i = 0; i < wordToGuess.Length; i++)
-            {
-                wordToGuessDash.Append('-');
-            }
+            AddWord();
 
             string usedLetters = String.Empty;
             bool won = false;
@@ -26,7 +20,6 @@ namespace Hangman
 
             while (numberOfFails < 10 && !won)
             {
-
                 Console.Write("Enter a letter: ");
                 input = Console.ReadLine().ToUpper();
                 guess = input[0];
@@ -43,29 +36,29 @@ namespace Hangman
                     continue;
                 }
 
-                if (wordToGuessUpper.Contains(guess))
+                if (WordToGuessUpper.Contains(guess))
                 {
-                    for (int j = 0; j < wordToGuessUpper.Length; j++)
+                    for (int j = 0; j < WordToGuessUpper.Length; j++)
                     {
-                        if (wordToGuessUpper[j] == guess)
+                        if (WordToGuessUpper[j] == guess)
                         {
-                            wordToGuessDash[j] = guess;
+                            WordToGuessDash[j] = guess;
                         }
                     }
-                    Console.WriteLine(wordToGuessDash.ToString());
+                    Console.WriteLine(WordToGuessDash.ToString());
                 }
                 else
                 {
                     numberOfFails++;
                     usedLetters += guess;
-                    Console.WriteLine(wordToGuessDash.ToString());
+                    Console.WriteLine(WordToGuessDash.ToString());
                     if (numberOfFails < 10)
                     {
                         Console.WriteLine($"Used letters: {usedLetters}");
                     }
                 }
 
-                if (wordToGuessDash.ToString().Equals(wordToGuessUpper))
+                if (WordToGuessDash.ToString().Equals(WordToGuessUpper))
                 {
                     won = true;
                 }
@@ -77,10 +70,23 @@ namespace Hangman
             }
             else
             {
-                Console.WriteLine($"You lost! Correct answer is: {wordToGuessUpper}");
+                Console.WriteLine($"You lost! Correct answer is: {WordToGuessUpper}");
             }
             Console.Write("Press enter to exit game...");
             Console.ReadLine();
+        }
+
+        public static void AddWord()
+        {
+            Random rnd = new Random();
+            var loadListOfWords = ListOfWords.LoadListOfWords();
+            string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
+            WordToGuessUpper = wordToGuess.ToUpper();
+
+            for (int i = 0; i < wordToGuess.Length; i++)
+            {
+                WordToGuessDash.Append('-');
+            }
         }
     }
 }

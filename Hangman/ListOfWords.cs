@@ -4,9 +4,7 @@ namespace Hangman
 {
     public class ListOfWords
     {
-        //public string WordToGuessUpper;
-        //public StringBuilder WordToGuessDashed;
-        public static string AppTitle = "Hangman";
+         public static string AppTitle = "Hangman";
 
         public static List<string> LoadListOfWords()
         {
@@ -29,20 +27,5 @@ namespace Hangman
             
             return ListOfWords;
         }
-
-        /*public void AddWord()
-        {
-            Random rnd = new Random();
-            List<string> listOfWords = LoadListOfWords();
-            string wordToGuess = listOfWords[rnd.Next(0, listOfWords.Count - 1)];
-            WordToGuessUpper = wordToGuess.ToUpper();
-
-            WordToGuessDashed = new StringBuilder();
-
-            for (int i = 0; i < wordToGuess.Length; i++)
-            {
-                WordToGuessDashed.Append('-');
-            }
-        }*/
     }
 }
