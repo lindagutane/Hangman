@@ -6,8 +6,9 @@ namespace Hangman
     {
         //public string WordToGuessUpper;
         //public StringBuilder WordToGuessDashed;
+        public static string AppTitle = "Hangman";
 
-        public List<string> LoadListOfWords()
+        public static List<string> LoadListOfWords()
         {
             StreamReader streamReader = null;
             try
@@ -25,7 +26,7 @@ namespace Hangman
             {
                 ListOfWords.Add(word);
             }
-
+            
             return ListOfWords;
         }
 

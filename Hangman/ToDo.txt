@@ -1,0 +1,9 @@
+﻿Aizkomentēt LoadListOfWords() un aizstāt ar vienu vārdu, lai atvieglotu programmas testēšanu
+Pievienot aplikācijas nosaukumu.
+Jānotīra ekrāns pēc enter nospiešanas (parādās jaunie ievadītie burti tajā pašā rindā svītru vietās)
+Skaitlis cik burtus vēl lietotājs drīkst ievadīt
+Karātavu attēlošana ar ConsoleWriteline (jauna klase DisplayGame)
+Izdalīt extensions klasi metodēs
+Paskatīties problēmu ar whitespace ievadi burta vietā
+Pēc burta ievades šobrīd ir jāspiež enter, pameklēt risinājumu
+Vēlāka izstrāde - sadalīt spēli līmeņi
