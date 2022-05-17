@@ -1,10 +1,4 @@
-﻿namespace Hangman;
+﻿using Hangman;
 
-public class HangmanGame
-{ 
-    static void Main(string[] args)
-    {
-        Extensions extensions = new Extensions();
-        extensions.StartGame();
-    }
-}
+Extensions extensions = new Extensions();
+extensions.StartGame();

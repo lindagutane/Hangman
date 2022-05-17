@@ -4,16 +4,15 @@ namespace Hangman
 {
     public class ListOfWords
     {
-        protected string WordToGuessUpper;
-        protected StringBuilder WordToGuessDashed;
-
+        //public string WordToGuessUpper;
+        //public StringBuilder WordToGuessDashed;
 
         public List<string> LoadListOfWords()
         {
-            StreamReader sr = null;
+            StreamReader streamReader = null;
             try
             {
-                sr = new StreamReader("Words.txt");
+                streamReader = new StreamReader("Words.txt");
             }
             catch (Exception)
             {
@@ -22,7 +21,7 @@ namespace Hangman
 
             List<string> ListOfWords = new List<string>();
             string word;
-            while ((word = sr.ReadLine()) != null)
+            while ((word = streamReader.ReadLine()) != null)
             {
                 ListOfWords.Add(word);
             }
@@ -30,7 +29,7 @@ namespace Hangman
             return ListOfWords;
         }
 
-        public void AddWord()
+        /*public void AddWord()
         {
             Random rnd = new Random();
             List<string> listOfWords = LoadListOfWords();
@@ -43,6 +42,6 @@ namespace Hangman
             {
                 WordToGuessDashed.Append('-');
             }
-        }
+        }*/
     }
 }
