@@ -2,13 +2,13 @@
 
 namespace Hangman
 {
-    public class Extensions : ListOfWords
+    public class Extensions
     {
-        public void StartGame()
+        public static void StartGame()
         {
             Random random = new Random();
-            List<string> listOfWords = LoadListOfWords();
-            string wordToGuess = listOfWords[random.Next(0, listOfWords.Count - 1)];
+            var loadListOfWords = ListOfWords.LoadListOfWords();
+            string wordToGuess = loadListOfWords[random.Next(0, loadListOfWords.Count - 1)];
             string wordToGuessUpper = wordToGuess.ToUpper();
 
             StringBuilder wordToGuessDash = new StringBuilder();
@@ -26,6 +26,7 @@ namespace Hangman
 
             while (numberOfFails < 10 && !won)
             {
+
                 Console.Write("Enter a letter: ");
                 input = Console.ReadLine().ToUpper();
                 guess = input[0];
