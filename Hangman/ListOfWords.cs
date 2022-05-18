@@ -4,8 +4,6 @@ namespace Hangman
 {
     public class ListOfWords
     {
-         public static string AppTitle = "Hangman";
-
         public static List<string> LoadListOfWords()
         {
             StreamReader streamReader = null;

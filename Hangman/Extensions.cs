@@ -6,19 +6,48 @@ namespace Hangman
     {
         private static string WordToGuessUpper;
         private static StringBuilder WordToGuessDash = new StringBuilder();
+        private static bool Won;
 
         public static void StartGame()
         {
-
             AddWord();
 
+            GuessWord();
+
+            if (Won)
+            {
+                Console.WriteLine("You won!");
+            }
+            else
+            {
+                Console.WriteLine($"You lost! Correct answer is: {WordToGuessUpper}");
+            }
+
+            Console.Write("Press enter to exit game...");
+            Console.ReadLine();
+        }
+
+        private static void AddWord()
+        {
+            Random rnd = new Random();
+            var loadListOfWords = ListOfWords.LoadListOfWords();
+            string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
+            WordToGuessUpper = wordToGuess.ToUpper();
+
+            for (int i = 0; i < wordToGuess.Length; i++)
+            {
+                WordToGuessDash.Append('-');
+            }
+        }
+
+        private static void GuessWord()
+        {
             string usedLetters = String.Empty;
-            bool won = false;
             int numberOfFails = 0;
             string input = String.Empty;
             char guess;
 
-            while (numberOfFails < 10 && !won)
+            while (numberOfFails < 10 && !Won)
             {
                 Console.Write("Enter a letter: ");
                 input = Console.ReadLine().ToUpper();
@@ -60,32 +89,8 @@ namespace Hangman
 
                 if (WordToGuessDash.ToString().Equals(WordToGuessUpper))
                 {
-                    won = true;
+                    Won = true;
                 }
-            }
-
-            if (won)
-            {
-                Console.WriteLine("You won!");
-            }
-            else
-            {
-                Console.WriteLine($"You lost! Correct answer is: {WordToGuessUpper}");
-            }
-            Console.Write("Press enter to exit game...");
-            Console.ReadLine();
-        }
-
-        public static void AddWord()
-        {
-            Random rnd = new Random();
-            var loadListOfWords = ListOfWords.LoadListOfWords();
-            string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
-            WordToGuessUpper = wordToGuess.ToUpper();
-
-            for (int i = 0; i < wordToGuess.Length; i++)
-            {
-                WordToGuessDash.Append('-');
             }
         }
     }
