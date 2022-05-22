@@ -85,6 +85,7 @@ namespace Hangman
                     {
                         Console.WriteLine($"Used letters: {usedLetters}");
                     }
+                    HangmanDisplay.Display(numberOfFails);
                 }
 
                 if (WordToGuessDash.ToString().Equals(WordToGuessUpper))
