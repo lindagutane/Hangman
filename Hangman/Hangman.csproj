@@ -8,8 +8,9 @@
   </PropertyGroup>
 	
 	<ItemGroup>
-		<None Update = "Words.txt">
+		<None Update="Words.txt">
 			<CopyToPutputDirectory>PreserveNewest</CopyToPutputDirectory>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
