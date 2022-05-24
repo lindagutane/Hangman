@@ -11,3 +11,4 @@ Fact, theory tests
 
 Sadalīt choose level (izdalīt) privātā funkcijā (no Extensions 16-40 rinda) - apakšā privāto funkciju/ metodi (iepriekšējās funkcijas tā jau sadalītas (guess word)) /Paula/
 
+
