@@ -4,9 +4,9 @@ Jānotīra ekrāns pēc enter nospiešanas (parādās jaunie ievadītie burti ta
 Pēc burta ievades šobrīd ir jāspiež enter, pameklēt risinājumu /Māris/
 Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 
+Skaitlis cik burtus vēl lietotājs drīkst ievadīt /Jānis/
 
-
-Karātavu attēlošana ar ConsoleWriteline + pa līmeņiem (jauna klase DisplayGame) /Austra/
+Karātavu attēlošana ar ConsoleWriteline (jauna klase DisplayGame) /Austra/
 
 Sadalīt sīkāk extensions privātās funkcijās (apskatīt arī if bloku, ciklu izdalīšanu metodēs) /Linda/
 Saprast kāpēc netiek izvadīts no csproj. /Linda/
