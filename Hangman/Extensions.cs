@@ -4,6 +4,7 @@ namespace Hangman
 {
     public class Extensions
     {
+        public static string AppTitle = "Hangman";
         private static string WordToGuessUpper;
         private static StringBuilder WordToGuessDash = new StringBuilder();
         private static bool Won;
