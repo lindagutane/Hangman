@@ -7,9 +7,37 @@ namespace Hangman
         private static string WordToGuessUpper;
         private static StringBuilder WordToGuessDash = new StringBuilder();
         private static bool Won;
+        private static int tries;
+        private static string difficulty;
 
         public static void StartGame()
         {
+            Console.WriteLine("Please choose a difficulty level:");
+            Console.WriteLine("1) easy");
+            Console.WriteLine("2) medium");
+            Console.WriteLine("3) hard");
+
+            string level = Console.ReadLine();
+            int intLevel = int.Parse(level);
+
+            if (intLevel == 1)
+            {
+                tries = 10;
+                difficulty = "1st";
+            }
+            if(intLevel == 2)
+            {
+                tries = 7;
+                difficulty = "2nd";
+            }
+            if (intLevel == 3)
+            {
+                tries = 5;
+                difficulty = "3rd";
+            }
+
+            Console.WriteLine($" {difficulty} difficulty level chosen. You can make {tries} mistakes!");
+
             AddWord();
 
             GuessWord();
@@ -81,9 +109,10 @@ namespace Hangman
                     numberOfFails++;
                     usedLetters += guess;
                     Console.WriteLine(WordToGuessDash.ToString());
-                    if (numberOfFails < 10)
+                    if (numberOfFails < tries)
                     {
                         Console.WriteLine($"Used letters: {usedLetters}");
+                        Console.WriteLine($"Remaining tries: {tries-numberOfFails} ");
                     }
                     HangmanDisplay.Display(numberOfFails);
                 }
