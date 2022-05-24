@@ -1,18 +1,13 @@
-﻿Aizkomentēt LoadListOfWords() un aizstāt ar vienu vārdu, lai atvieglotu programmas testēšanu /Paula/
-
-Jānotīra ekrāns pēc enter nospiešanas (parādās jaunie ievadītie burti tajā pašā rindā svītru vietās) /Māris/
-Pēc burta ievades šobrīd ir jāspiež enter, pameklēt risinājumu /Māris/
+﻿Jānotīra ekrāns pēc enter nospiešanas (parādās jaunie ievadītie burti tajā pašā rindā svītru vietās) - console clear un pārprintēt? /Māris/ -Jānis?
 Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 
-Skaitlis cik burtus vēl lietotājs drīkst ievadīt /Jānis/
+Attēlot karātavas atbilstoši līmeņiem /Austra/
 
-Karātavu attēlošana ar ConsoleWriteline (jauna klase DisplayGame) /Austra/
+Lai visu laiku rādās izmantotie burti?
 
-Sadalīt sīkāk extensions privātās funkcijās (apskatīt arī if bloku, ciklu izdalīšanu metodēs) /Linda/
-Saprast kāpēc netiek izvadīts no csproj. /Linda/
-Pievienot aplikācijas nosaukumu. Kods ko pievienot: Console.Title = ListOfWords.AppTitle; Console.Read(); /Linda/
+Unittesti? /Linda/
+Notestēt ievades (negatīvie testi, nederīgi simboli, cipari)
+Fact, theory tests
 
+Sadalīt choose level (izdalīt) privātā funkcijā (no Extensions 16-40 rinda) - apakšā privāto funkciju/ metodi (iepriekšējās funkcijas tā jau sadalītas (guess word)) /Paula/
 
-
-
-Vēlāka izstrāde - sadalīt spēli līmeņi
