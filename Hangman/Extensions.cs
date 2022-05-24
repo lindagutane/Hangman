@@ -77,8 +77,9 @@ namespace Hangman
             string input = String.Empty;
             char guess;
 
-            while (numberOfFails < 10 && !Won)
+            while (numberOfFails < tries && !Won)
             {
+
                 Console.Write("Enter a letter: ");
                 input = Console.ReadLine().ToUpper();
                 guess = input[0];
@@ -102,6 +103,12 @@ namespace Hangman
                         if (WordToGuessUpper[j] == guess)
                         {
                             WordToGuessDash[j] = guess;
+                            Console.Clear();
+                            Console.WriteLine(WordToGuessDash.ToString());
+                            Console.WriteLine($"Used letters: {usedLetters}");
+                            Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
+
+                            HangmanDisplay.Display(numberOfFails);
                         }
                     }
                     Console.WriteLine(WordToGuessDash.ToString());
@@ -113,9 +120,12 @@ namespace Hangman
                     Console.WriteLine(WordToGuessDash.ToString());
                     if (numberOfFails < tries)
                     {
+                        Console.Clear();
+                        Console.WriteLine(WordToGuessDash.ToString());
                         Console.WriteLine($"Used letters: {usedLetters}");
-                        Console.WriteLine($"Remaining tries: {tries-numberOfFails} ");
+                        Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
+                    
                     HangmanDisplay.Display(numberOfFails);
                 }
 
