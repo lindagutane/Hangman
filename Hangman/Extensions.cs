@@ -10,6 +10,7 @@ namespace Hangman
         private static bool Won;
         private static int tries;
         private static string difficulty;
+        private const int MAX_GUESSES = 10;
 
         public static void StartGame()
         {
@@ -108,7 +109,7 @@ namespace Hangman
                             Console.WriteLine($"Used letters: {usedLetters}");
                             Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
 
-                            HangmanDisplay.Display(10 - tries + numberOfFails);
+                            HangmanDisplay.Display(MAX_GUESSES - tries + numberOfFails);
                         }
                     }
                     Console.WriteLine(WordToGuessDash.ToString());
@@ -126,7 +127,7 @@ namespace Hangman
                         Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
                     
-                    HangmanDisplay.Display(10 - tries + numberOfFails);
+                    HangmanDisplay.Display(MAX_GUESSES - tries + numberOfFails);
                 }
 
                 if (WordToGuessDash.ToString().Equals(WordToGuessUpper))
