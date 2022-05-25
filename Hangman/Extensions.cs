@@ -108,7 +108,7 @@ namespace Hangman
                             Console.WriteLine($"Used letters: {usedLetters}");
                             Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
 
-                            HangmanDisplay.Display(numberOfFails);
+                            HangmanDisplay.Display(10 - tries + numberOfFails);
                         }
                     }
                     Console.WriteLine(WordToGuessDash.ToString());
@@ -126,7 +126,7 @@ namespace Hangman
                         Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
                     
-                    HangmanDisplay.Display(numberOfFails);
+                    HangmanDisplay.Display(10 - tries + numberOfFails);
                 }
 
                 if (WordToGuessDash.ToString().Equals(WordToGuessUpper))

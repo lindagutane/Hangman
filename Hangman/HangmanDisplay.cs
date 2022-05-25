@@ -6,6 +6,8 @@
         {
             switch (numberOfFails)
             {
+                case 0:
+                    break;
                 case 1:
                     Console.WriteLine(@"
                            
