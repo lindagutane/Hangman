@@ -1,22 +1,11 @@
-﻿namespace Hangman;
+using Xunit;
 
-public class HangmanDisplay
+namespace Hangman.Tests
 {
-
-    public static void Display(int numberOfFails)
+    public class HangmanDisplayTests
     {
-        string hangman = GetMan(numberOfFails);
-        Console.WriteLine(hangman);
-    }
-
-    public static string GetMan(int numberOfFails)
-    {
-        switch (numberOfFails)
-        {
-            case 0:
-                return null;
-            case 1:
-                return @"
+        #region Case
+        private const string FirstCase = @"
                            
                            
                            
@@ -24,8 +13,8 @@ public class HangmanDisplay
                            
                            
                     =========";
-            case 2:
-                return @"
+
+        private const string SecondCase = @"
                           +
                           |
                           |
@@ -33,8 +22,8 @@ public class HangmanDisplay
                           |
                           |
                     =========";
-            case 3:
-                return @"
+
+        private const string ThirdCase = @"
                       +---+
                           |
                           |
@@ -42,35 +31,35 @@ public class HangmanDisplay
                           |
                           |
                     =========";
-            case 4:
-                return @"
-                      +---+
-                      |   |
-                          |
-                          |
-                          |
-                          |
-                    =========";
-            case 5:
-                return @"
+
+        private const string FourthCase = @"
                       +---+
                       |   |
-                      O   |
+                          |
                           |
                           |
                           |
                     =========";
-            case 6:
-                return @"
+
+        private const string FifthCase = @"
                       +---+
                       |   |
                       O   |
+                          |
+                          |
+                          |
+                    =========";
+
+        private const string SixthCase = @"
+                      +---+
+                      |   |
+                      O   |
                       |   |
                           |
                           |
                     =========";
-            case 7:
-                return @"
+
+        private const string SeventhCase = @"
                       +---+
                       |   |
                       O   |
@@ -78,17 +67,16 @@ public class HangmanDisplay
                           |
                           |
                     =========";
-            case 8:
-                return @"
+
+        private const string EightCase = @"
                       +---+
                       |   |
                       O   |
                      /|\  |
                           |
                           |
-                    =========";                    
-            case 9:
-                return @"
+                    =========";
+        private const string NinthCase = @"
                       +---+
                       |   |
                       O   |
@@ -96,8 +84,8 @@ public class HangmanDisplay
                      /    |
                           |
                     =========";
-            case 10:
-                return @"
+
+        private const string TenthCase = @"
                       +---+
                       |   |
                       O   |
@@ -105,8 +93,32 @@ public class HangmanDisplay
                      / \  |
                           |
                     =========";
-            default:
-                throw new Exception("Problem displaying Hangman, check your code!");
+
+        #endregion
+
+        [Theory]
+        [InlineData(1, FirstCase)]
+        [InlineData(2, SecondCase)]
+        [InlineData(3, ThirdCase)]
+        [InlineData(4, FourthCase)]
+        [InlineData(5, FifthCase)]
+        [InlineData(6, SixthCase)]
+        [InlineData(7, SeventhCase)]
+        [InlineData(8, EightCase)]
+        [InlineData(9, NinthCase)]
+        [InlineData(10, TenthCase)]
+
+        public void GetMan_WhenCorrectNumberOfTries_ThenReturnsCorrectCase(int tries, string result)
+        {
+            var response = HangmanDisplay.GetMan(tries);
+
+            Assert.Equal(result, response);
+        }
+
+        [Fact]
+        public void GetMan_WhenIncorrectNumberOfTries_ThenThrowsSystemException()
+        {
+            Assert.Throws<System.Exception>(() => HangmanDisplay.GetMan(20));
         }
     }
 }
