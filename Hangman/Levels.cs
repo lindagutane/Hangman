@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    internal class Levels
+    public enum Levels
     {
+        Easy = 1,
+        Medium,
+        Hard
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Hangman;
 
 namespace Hangman
 {
@@ -14,28 +15,33 @@ namespace Hangman
 
         public static void StartGame()
         {
+
             Console.WriteLine("Please choose a difficulty level:");
             Console.WriteLine("1) easy");
             Console.WriteLine("2) medium");
             Console.WriteLine("3) hard");
 
+            Levels levelEasy = Levels.Easy;
+            Levels levelMedium = Levels.Medium;
+            Levels levelHard = Levels.Hard;
+
             string level = Console.ReadLine();
             int intLevel = int.Parse(level);
 
-            if (intLevel == 1)
+            if (intLevel == (int)levelEasy)
             {
                 tries = 10;
-                difficulty = "1st";
+                difficulty = levelEasy.ToString();
             }
-            if(intLevel == 2)
+            if(intLevel == (int)levelMedium)
             {
                 tries = 7;
-                difficulty = "2nd";
+                difficulty = levelMedium.ToString();
             }
-            if (intLevel == 3)
+            if (intLevel == (int)levelHard)
             {
                 tries = 5;
-                difficulty = "3rd";
+                difficulty = levelHard.ToString();
             }
 
             Console.WriteLine($" {difficulty} difficulty level chosen. You can make {tries} mistakes!");
@@ -62,7 +68,7 @@ namespace Hangman
             //Random rnd = new Random();
             //var loadListOfWords = ListOfWords.LoadListOfWords();
             //string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
-            string wordToGuess = "hidroelektrostacija";
+            string wordToGuess = "KaKis";
             WordToGuessUpper = wordToGuess.ToUpper();
 
             for (int i = 0; i < wordToGuess.Length; i++)
