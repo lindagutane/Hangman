@@ -1,14 +1,24 @@
-﻿Jānotīra ekrāns pēc enter nospiešanas (parādās jaunie ievadītie burti tajā pašā rindā svītru vietās) - console clear un pārprintēt? /Māris/ -Jānis?
+﻿Nedublēt 9 un 10 case (Ja lietotājs spēli zaudē) /Jānis/
+
 Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 
-Attēlot karātavas atbilstoši līmeņiem /Austra/
-
-Lai visu laiku rādās izmantotie burti?
-
-Unittesti? /Linda/
-Notestēt ievades (negatīvie testi, nederīgi simboli, cipari)
-Fact, theory tests
+Paildināt unittestus /Brīvprātīgi/
 
 Sadalīt choose level (izdalīt) privātā funkcijā (no Extensions 16-40 rinda) - apakšā privāto funkciju/ metodi (iepriekšējās funkcijas tā jau sadalītas (guess word)) /Paula/
 
+Ieviest enums - līmeņos /Austra/
 
+Logošana /Linda/ Var izmantot lai attēlotu uzvarošos tekstu atkarībā no līmeņa
+
++
+/Austra/
+
+1. Izveidot DB  [Izmantot minamo vārdu sarakstam]
+2. Pievienot lietotājvāda ievadi
+3. Saglabāt lietotājvārdu db 
+4. Punktu skaitīšanas sistēma
+
+sql lihte - db, kas strādā ar txt failiem 
+
++ 
+web vai formas - brīvprātības princips :)

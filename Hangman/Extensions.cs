@@ -106,7 +106,7 @@ namespace Hangman
                             WordToGuessDash[j] = guess;
                             Console.Clear();
                             Console.WriteLine(WordToGuessDash.ToString());
-                            Console.WriteLine($"Used letters: {usedLetters}");
+                            Console.WriteLine($"Wrong letters: {usedLetters}");
                             Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
 
                             HangmanDisplay.Display(MAX_GUESSES - tries + numberOfFails);
@@ -123,7 +123,7 @@ namespace Hangman
                     {
                         Console.Clear();
                         Console.WriteLine(WordToGuessDash.ToString());
-                        Console.WriteLine($"Used letters: {usedLetters}");
+                        Console.WriteLine($"Wrong letters: {usedLetters}");
                         Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
                     
