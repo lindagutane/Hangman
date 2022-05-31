@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hangman
 {
-    public interface WinningText
+    public interface IWinningText
     {
 
         //Levels levelEasy = Levels.Easy;
