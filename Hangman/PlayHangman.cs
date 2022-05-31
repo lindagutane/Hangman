@@ -52,6 +52,7 @@ namespace Hangman
 
             if (Won)
             {
+                //log(level);
                 Console.WriteLine("You won!");
             }
             else
