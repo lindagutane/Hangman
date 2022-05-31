@@ -1,5 +1,5 @@
 ﻿using Hangman;
 
-Console.Title = Extensions.AppTitle;
+Console.Title = PlayHangman.AppTitle;
 
-Extensions.StartGame();
+PlayHangman.StartGame();

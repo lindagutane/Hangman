@@ -2,7 +2,7 @@
 
 namespace Hangman
 {
-    public class Extensions
+    public class PlayHangman
     {
         public static string AppTitle = "Hangman";
         private static string WordToGuessUpper;
