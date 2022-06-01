@@ -2,4 +2,6 @@
 
 Console.Title = PlayHangman.AppTitle;
 
-PlayHangman.StartGame();
+PlayHangman playHangman = new PlayHangman();
+
+playHangman.StartGame();

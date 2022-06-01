@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using Hangman;
+using Hangman.Interface;
 
 namespace Hangman
 {
@@ -13,7 +13,7 @@ namespace Hangman
         private static string difficulty;
         private const int MAX_GUESSES = 10;
 
-        public static void StartGame()
+        public void StartGame()
         {
 
             Console.WriteLine("Please choose a difficulty level:");
@@ -33,7 +33,7 @@ namespace Hangman
                 tries = 10;
                 difficulty = levelEasy.ToString();
             }
-            if(intLevel == (int)levelMedium)
+            if (intLevel == (int)levelMedium)
             {
                 tries = 7;
                 difficulty = levelMedium.ToString();
@@ -52,8 +52,33 @@ namespace Hangman
 
             if (Won)
             {
-                //log(level);
-                Console.WriteLine("You won!");
+                ILogger fileLogger = new FileLogger();
+                ILogger consoleLogger = new ConsoleLogger();
+
+                List<ILogger> loggers = new List<ILogger>();
+                loggers.Add(consoleLogger);
+                loggers.Add(fileLogger);
+
+                CheckAllLoggers(loggers);
+
+                void CheckAllLoggers(List<ILogger> loggers)
+                {
+                    foreach (var logger in loggers)
+                    {
+                        if (intLevel == (int)levelEasy)
+                        {
+                            logger.Log("You won!");
+                        }
+                        if (intLevel == (int)levelMedium)
+                        {
+                            logger.Log($"You won the {levelMedium} difficulty, yey!");
+                        }
+                        if (intLevel == (int)levelHard)
+                        {
+                            logger.Log("You won the HARDEST game EVER!");
+                        }
+                    }
+                }
             }
             else
             {
@@ -133,7 +158,7 @@ namespace Hangman
                         Console.WriteLine($"Wrong letters: {usedLetters}");
                         Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
-                    
+
                     HangmanDisplay.Display(MAX_GUESSES - tries + numberOfFails);
                 }
 
