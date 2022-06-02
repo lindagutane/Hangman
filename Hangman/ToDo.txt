@@ -1,4 +1,4 @@
-﻿Nedublēt 9 un 10 case (Ja lietotājs spēli zaudē) /Jānis/
+﻿Nedublēt 9 un 10 case (Ja lietotājs spēli zaudē) done!
 
 Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 

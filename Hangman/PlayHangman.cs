@@ -17,9 +17,9 @@ namespace Hangman
         {
 
             Console.WriteLine("Please choose a difficulty level:");
-            Console.WriteLine("1) easy");
-            Console.WriteLine("2) medium");
-            Console.WriteLine("3) hard");
+            Console.WriteLine("1) Easy");
+            Console.WriteLine("2) Medium");
+            Console.WriteLine("3) Hard");
 
             Levels levelEasy = Levels.Easy;
             Levels levelMedium = Levels.Medium;
@@ -44,7 +44,8 @@ namespace Hangman
                 difficulty = levelHard.ToString();
             }
 
-            Console.WriteLine($" {difficulty} difficulty level chosen. You can make {tries} mistakes!");
+            Console.WriteLine($"Difficulty level chosen: {difficulty}");
+            Console.WriteLine($"You can make {tries} mistakes!");
 
             AddWord();
 
@@ -82,7 +83,9 @@ namespace Hangman
             }
             else
             {
+                Console.Clear();
                 Console.WriteLine($"You lost! Correct answer is: {WordToGuessUpper}");
+                HangmanDisplay.Display(10);
             }
 
             Console.Write("Press enter to exit game...");
