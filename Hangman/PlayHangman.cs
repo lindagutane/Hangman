@@ -53,33 +53,7 @@ namespace Hangman
 
             if (Won)
             {
-                ILogger fileLogger = new FileLogger();
-                ILogger consoleLogger = new ConsoleLogger();
-
-                List<ILogger> loggers = new List<ILogger>();
-                loggers.Add(consoleLogger);
-                loggers.Add(fileLogger);
-
-                CheckAllLoggers(loggers);
-
-                void CheckAllLoggers(List<ILogger> loggers)
-                {
-                    foreach (var logger in loggers)
-                    {
-                        if (intLevel == (int)levelEasy)
-                        {
-                            logger.Log("You won!");
-                        }
-                        if (intLevel == (int)levelMedium)
-                        {
-                            logger.Log($"You won the {levelMedium} difficulty, yey!");
-                        }
-                        if (intLevel == (int)levelHard)
-                        {
-                            logger.Log("You won the HARDEST game EVER!");
-                        }
-                    }
-                }
+                WinnerText(intLevel);
             }
             else
             {
@@ -168,6 +142,37 @@ namespace Hangman
                 if (WordToGuessDash.ToString().Equals(WordToGuessUpper))
                 {
                     Won = true;
+                }
+            }
+        }
+
+        private static void WinnerText(int intLevel)
+        {
+            ILogger fileLogger = new FileLogger();
+            ILogger consoleLogger = new ConsoleLogger();
+
+            List<ILogger> loggers = new List<ILogger>();
+            loggers.Add(consoleLogger);
+            loggers.Add(fileLogger);
+
+            CheckAllLoggers(loggers);
+
+            void CheckAllLoggers(List<ILogger> loggers)
+            {
+                foreach (var logger in loggers)
+                {
+                    if (intLevel == (int)Levels.Easy)
+                    {
+                        logger.Log("You won!");
+                    }
+                    if (intLevel == (int)Levels.Medium)
+                    {
+                        logger.Log($"You won the {Levels.Medium} difficulty, yey!");
+                    }
+                    if (intLevel == (int)Levels.Hard)
+                    {
+                        logger.Log("You won the HARDEST game EVER!");
+                    }
                 }
             }
         }
