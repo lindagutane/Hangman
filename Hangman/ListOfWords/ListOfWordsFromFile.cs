@@ -2,9 +2,18 @@
 {
     public class ListOfWordsFromFile : BaseListOfWords
     {
-        public void UseListOfWords()
+        public static List<string> UseListOfWords()
         {
-            LoadListOfWords("Words.txt");   
+            StreamReader streamReader = LoadListOfWords("Words.txt");
+
+            List<string> ListOfWords = new List<string>();
+            string word;
+            while ((word = streamReader.ReadLine()) != null)
+            {
+                ListOfWords.Add(word);
+            }
+
+            return ListOfWords;
         }
     }
 }
