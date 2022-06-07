@@ -15,18 +15,11 @@ namespace Hangman
 
         public void StartGame()
         {
-
-            Console.WriteLine("Please choose a difficulty level:");
-            Console.WriteLine("1) Easy");
-            Console.WriteLine("2) Medium");
-            Console.WriteLine("3) Hard");
+            int intLevel = ChooseLevel();
 
             Levels levelEasy = Levels.Easy;
             Levels levelMedium = Levels.Medium;
             Levels levelHard = Levels.Hard;
-
-            string level = Console.ReadLine();
-            int intLevel = int.Parse(level);
 
             if (intLevel == (int)levelEasy)
             {
@@ -64,6 +57,18 @@ namespace Hangman
 
             Console.Write("Press enter to exit game...");
             Console.ReadLine();
+        }
+
+        private static int ChooseLevel()
+        {
+            Console.WriteLine("Please choose a difficulty level:");
+            Console.WriteLine("1) Easy");
+            Console.WriteLine("2) Medium");
+            Console.WriteLine("3) Hard");
+
+            string level = Console.ReadLine();
+            int intLevel = int.Parse(level);
+            return intLevel;
         }
 
         private static void AddWord()
