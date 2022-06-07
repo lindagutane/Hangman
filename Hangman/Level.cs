@@ -1,6 +1,6 @@
 ﻿namespace Hangman
 {
-    public enum Levels
+    public enum Level
     {
         Easy = 1,
         Medium,

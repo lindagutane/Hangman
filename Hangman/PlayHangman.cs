@@ -17,9 +17,9 @@ namespace Hangman
         {
             int intLevel = ChooseLevel();
 
-            Levels levelEasy = Levels.Easy;
-            Levels levelMedium = Levels.Medium;
-            Levels levelHard = Levels.Hard;
+            Level levelEasy = Level.Easy;
+            Level levelMedium = Level.Medium;
+            Level levelHard = Level.Hard;
 
             if (intLevel == (int)levelEasy)
             {
@@ -166,15 +166,15 @@ namespace Hangman
             {
                 foreach (var logger in loggers)
                 {
-                    if (intLevel == (int)Levels.Easy)
+                    if (intLevel == (int)Level.Easy)
                     {
                         logger.Log("You won!");
                     }
-                    if (intLevel == (int)Levels.Medium)
+                    if (intLevel == (int)Level.Medium)
                     {
-                        logger.Log($"You won the {Levels.Medium} difficulty, yey!");
+                        logger.Log($"You won the {Level.Medium} difficulty, yey!");
                     }
-                    if (intLevel == (int)Levels.Hard)
+                    if (intLevel == (int)Level.Hard)
                     {
                         logger.Log("You won the HARDEST game EVER!");
                     }

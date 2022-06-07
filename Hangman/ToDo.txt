@@ -1,19 +1,26 @@
 ﻿Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 
-Paildināt unittestus /Brīvprātīgi/
+Papildināt unittestus /Paula/
 
-Papildināt logošanu 
+Papildināt logošanu /Linda/ 
 
 Klašu pārmantošana 
-BaseListOfWords 
-ListOfWords pārsaukt uz ListFromFile un mantošana no baseList
-ListFromDatabase un arī mantojas no baseList
+ListOfWordsFromDatabase mantojas no baseList /Austra/
+
+Paskatīties kā pievienot ikonu, kad ir palaista programma (Konsoles logam)
++
+Dizainiski uzlabot konsoles izskatu (piemēram nomainī background krāsu, teksta krāsu) /Paula/ /Jānis/
+
+Uztaisīt, lai visu laiku vienā vietā ir redzami atminētie burti (pie veikmsīga gadījuma, lai nelēkā) /Kurš grib/ - /Jānis/
 
 +
 
-1. Izveidot DB  [Izmantot minamo vārdu sarakstam] /Māris/
+1. Izveidot DB  [Izmantot minamo vārdu sarakstam] /Māris/ - /Austra/
 2. Pievienot lietotājvāda ievadi
 3. Saglabāt lietotājvārdu db 
 4. Punktu skaitīšanas sistēma
 
 sql lihte - db, kas strādā ar txt failiem
+https://docs.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli
+
+Padomāt par formām /Kurš grib/
