@@ -1,15 +1,13 @@
-﻿using System.Text;
-
-namespace Hangman
+﻿namespace Hangman
 {
-    public class ListOfWords
+    public class BaseListOfWords
     {
-        public static List<string> LoadListOfWords()
+        public static List<string> LoadListOfWords(string file)
         {
             StreamReader streamReader = null;
             try
             {
-                streamReader = new StreamReader("Words.txt");
+                streamReader = new StreamReader(file);
             }
             catch (Exception)
             {
@@ -22,7 +20,7 @@ namespace Hangman
             {
                 ListOfWords.Add(word);
             }
-            
+
             return ListOfWords;
         }
     }

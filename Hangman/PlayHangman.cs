@@ -73,10 +73,10 @@ namespace Hangman
 
         private static void AddWord()
         {
-            //Random rnd = new Random();
-            //var loadListOfWords = ListOfWords.LoadListOfWords();
-            //string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
-            string wordToGuess = "KaKis";
+            Random rnd = new Random();
+            var loadListOfWords = ListOfWordsFromFile.UseListOfWords();
+            string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
+            //string wordToGuess = "KaKis";
             WordToGuessUpper = wordToGuess.ToUpper();
 
             for (int i = 0; i < wordToGuess.Length; i++)

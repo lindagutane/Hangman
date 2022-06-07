@@ -1,24 +1,19 @@
-﻿Nedublēt 9 un 10 case (Ja lietotājs spēli zaudē) done!
-
-Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
+﻿Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
 
 Paildināt unittestus /Brīvprātīgi/
 
-Sadalīt choose level (izdalīt) privātā funkcijā (no Extensions 16-40 rinda) - apakšā privāto funkciju/ metodi (iepriekšējās funkcijas tā jau sadalītas (guess word)) /Paula/
+Papildināt logošanu 
 
-Ieviest enums - līmeņos /Austra/
-
-Logošana /Linda/ Var izmantot lai attēlotu uzvarošos tekstu atkarībā no līmeņa
+Klašu pārmantošana 
+BaseListOfWords 
+ListOfWords pārsaukt uz ListFromFile un mantošana no baseList
+ListFromDatabase un arī mantojas no baseList
 
 +
-/Austra/
 
-1. Izveidot DB  [Izmantot minamo vārdu sarakstam]
+1. Izveidot DB  [Izmantot minamo vārdu sarakstam] /Māris/
 2. Pievienot lietotājvāda ievadi
 3. Saglabāt lietotājvārdu db 
 4. Punktu skaitīšanas sistēma
 
-sql lihte - db, kas strādā ar txt failiem 
-
-+ 
-web vai formas - brīvprātības princips :)
+sql lihte - db, kas strādā ar txt failiem
