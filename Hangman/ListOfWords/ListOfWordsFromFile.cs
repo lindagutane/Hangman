@@ -2,7 +2,7 @@
 {
     public class ListOfWordsFromFile : BaseListOfWords
     {
-        public static List<string> UseListOfWords()
+        public static string GetWord()
         {
             StreamReader streamReader = LoadListOfWords("Words.txt");
 
@@ -13,7 +13,8 @@
                 ListOfWords.Add(word);
             }
 
-            return ListOfWords;
+            return GetRandomWord(ListOfWords);
         }
+
     }
 }

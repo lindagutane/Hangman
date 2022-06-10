@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using Hangman.Interface;
+using Hangman.ListOfWords;
 
 namespace Hangman
 {
@@ -61,21 +62,33 @@ namespace Hangman
 
         private static int ChooseLevel()
         {
-            Console.WriteLine("Please choose a difficulty level:");
-            Console.WriteLine("1) Easy");
-            Console.WriteLine("2) Medium");
-            Console.WriteLine("3) Hard");
+            Console.WriteLine("   --==Welcome to HANGMAN==--");
+            Console.WriteLine("");
+            Console.WriteLine("   SELECT A DIFFICULTY LEVEL");
+            Console.WriteLine("   ---------------------------------");
+            Console.WriteLine("    1. Easy");
+            Console.WriteLine("    2. Medium");
+            Console.WriteLine("    3. Hard");
+            Console.WriteLine("   ---------------------------------");
 
+            Console.Write("Enter Your Choice => ");
             string level = Console.ReadLine();
             int intLevel = int.Parse(level);
+            Console.WriteLine("");
             return intLevel;
         }
 
         private static void AddWord()
         {
-            Random rnd = new Random();
-            var loadListOfWords = ListOfWordsFromFile.UseListOfWords();
-            string wordToGuess = loadListOfWords[rnd.Next(0, loadListOfWords.Count - 1)];
+
+            string wordToGuess;
+            wordToGuess = ListOfWordsFromDatabase.GetRandomWordFromDb();        
+
+            if (string.IsNullOrEmpty(wordToGuess))
+            {
+                Console.WriteLine("Guessing word is taken from file!");
+                wordToGuess = ListOfWordsFromFile.GetWord();
+            }                     
             //string wordToGuess = "KaKis";
             WordToGuessUpper = wordToGuess.ToUpper();
 
@@ -95,15 +108,20 @@ namespace Hangman
             while (numberOfFails < tries && !Won)
             {
 
-                Console.Write("Enter a letter: ");
+                Console.Write("ENTER A LETTER => ");
                 input = Console.ReadLine().ToUpper();
                 guess = input[0];
 
+                if (Char.IsWhiteSpace(guess))
+                {
+                    Console.WriteLine($"Please, enter a letter!");
+                    continue;
+                }
                 if (!Char.IsLetter(guess))
                 {
                     Console.WriteLine($"{guess} is not a letter!");
                     continue;
-                }
+                }             
 
                 if (usedLetters.Contains(guess))
                 {
@@ -120,6 +138,7 @@ namespace Hangman
                             WordToGuessDash[j] = guess;
                             Console.Clear();
                             Console.WriteLine(WordToGuessDash.ToString());
+                            Console.WriteLine("");
                             Console.WriteLine($"Wrong letters: {usedLetters}");
                             Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
 
@@ -137,6 +156,7 @@ namespace Hangman
                     {
                         Console.Clear();
                         Console.WriteLine(WordToGuessDash.ToString());
+                        Console.WriteLine("");
                         Console.WriteLine($"Wrong letters: {usedLetters}");
                         Console.WriteLine($"Remaining tries: {tries - numberOfFails} ");
                     }
