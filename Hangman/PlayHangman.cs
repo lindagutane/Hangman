@@ -145,7 +145,7 @@ namespace Hangman
                             HangmanDisplay.Display(MAX_GUESSES - tries + numberOfFails);
                         }
                     }
-                    Console.WriteLine(WordToGuessDash.ToString());
+                    
                 }
                 else
                 {

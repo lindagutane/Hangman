@@ -11,7 +11,7 @@ Paskatīties kā pievienot ikonu, kad ir palaista programma (Konsoles logam)
 +
 Dizainiski uzlabot konsoles izskatu (piemēram nomainī background krāsu, teksta krāsu) /Paula/ /Jānis/
 
-Uztaisīt, lai visu laiku vienā vietā ir redzami atminētie burti (pie veikmsīga gadījuma, lai nelēkā) /Kurš grib/ - /Jānis/
+Uztaisīt, lai visu laiku vienā vietā ir redzami atminētie burti (pie veikmsīga gadījuma, lai nelēkā) done!
 
 +
 
