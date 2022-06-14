@@ -4,15 +4,28 @@
     {
         public static string GetWord()
         {
-            StreamReader streamReader = LoadListOfWords("Words.txt");
 
+            StreamReader streamReader = null;
             List<string> ListOfWords = new List<string>();
-            string word;
-            while ((word = streamReader.ReadLine()) != null)
+            try
             {
-                ListOfWords.Add(word);
-            }
+                streamReader = new StreamReader("Words.txt");                
+                string word;
+                while ((word = streamReader?.ReadLine()) != null)
+                {
+                    ListOfWords.Add(word);
+                }
 
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Cannot load text file with list of words!");
+            }
+            finally
+            {
+                streamReader?.Close();
+            }         
+            
             return GetRandomWord(ListOfWords);
         }
 

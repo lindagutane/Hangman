@@ -1,4 +1,6 @@
 ﻿using System.Data.SQLite;
+using Hangman;
+using Hangman.Interface;
 
 namespace Hangman.ListOfWords
 {
@@ -6,6 +8,12 @@ namespace Hangman.ListOfWords
     {
         static SQLiteConnection CreateConnection()
         {
+
+            ILogger fileLogger = new FileLogger();   
+            List<ILogger> loggers = new List<ILogger>();
+            loggers.Add(fileLogger);
+
+            //CheckAllLoggers(loggers);
 
             SQLiteConnection sqlite_conn;
             // Create a new database connection:
@@ -15,9 +23,9 @@ namespace Hangman.ListOfWords
             {
                 sqlite_conn.Open();
             }
-            catch (Exception ex)
-            {
-                return null;
+            catch (Exception)
+            {                
+               return null;
             }
             return sqlite_conn;
         }
@@ -60,7 +68,6 @@ namespace Hangman.ListOfWords
             command.ExecuteNonQuery();
             command.CommandText = "INSERT INTO GuessingWords VALUES ('investigate'); ";
             command.ExecuteNonQuery();
-
         }
 
         static string ReadData(SQLiteConnection connection)
@@ -68,7 +75,16 @@ namespace Hangman.ListOfWords
             SQLiteDataReader dataReader;
             SQLiteCommand command;
             command = connection.CreateCommand();
-            command.CommandText = "SELECT Word FROM GuessingWords";
+
+            try
+            {
+                command.CommandText = "SELECT Word FROM GuessingWords";
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
 
             dataReader = command.ExecuteReader();
 

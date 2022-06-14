@@ -81,8 +81,7 @@ namespace Hangman
         private static void AddWord()
         {
 
-            string wordToGuess;
-            wordToGuess = ListOfWordsFromDatabase.GetRandomWordFromDb();        
+            string wordToGuess = ListOfWordsFromDatabase.GetRandomWordFromDb();        
 
             if (string.IsNullOrEmpty(wordToGuess))
             {
@@ -112,20 +111,15 @@ namespace Hangman
                 input = Console.ReadLine().ToUpper();
                 guess = input[0];
 
-                if (Char.IsWhiteSpace(guess))
-                {
-                    Console.WriteLine($"Please, enter a letter!");
-                    continue;
-                }
-                if (!Char.IsLetter(guess))
-                {
-                    Console.WriteLine($"{guess} is not a letter!");
-                    continue;
-                }             
+                //izveido metodi validate input 
+                //un tad metodi izsauc try catch blokā un validē inputu tādā veidā 
 
-                if (usedLetters.Contains(guess))
+                try
                 {
-                    Console.WriteLine($"You've already used {guess}!");
+                    ValidateInput(guess, usedLetters);
+                }
+                catch (InvalidInputException)
+                {
                     continue;
                 }
 
@@ -171,6 +165,24 @@ namespace Hangman
             }
         }
 
+        private static void ValidateInput(char input, String usedLetters)
+        {
+            if (Char.IsWhiteSpace(input))
+            {
+                throw new InvalidInputException($"Please, enter a letter!");
+            }
+
+            if (!Char.IsLetter(input))
+            {
+                throw new InvalidInputException($"{input} is not a letter!");
+            }
+
+            if (usedLetters.Contains(input))
+            {
+                throw new InvalidInputException($"You've already used {input}!");
+            }
+        }
+
         private static void WinnerText(int intLevel)
         {
             ILogger fileLogger = new FileLogger();
@@ -188,7 +200,11 @@ namespace Hangman
                 {
                     if (intLevel == (int)Level.Easy)
                     {
-                        logger.Log("You won!");
+                        logger.Log("");
+                        logger.Log("   **************");
+                        logger.Log("   ***YOU WON!***");
+                        logger.Log("   **************");
+                        logger.Log("");
                     }
                     if (intLevel == (int)Level.Medium)
                     {
