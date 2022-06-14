@@ -1,17 +1,10 @@
-﻿Paskatīties problēmu ar whitespace ievadi burta vietā /Māris/
-
-Papildināt unittestus /Paula/
+﻿Papildināt unittestus /Paula/
 
 Papildināt logošanu /Linda/ 
-
-Klašu pārmantošana 
-ListOfWordsFromDatabase mantojas no baseList /Austra/
 
 Paskatīties kā pievienot ikonu, kad ir palaista programma (Konsoles logam)
 +
 Dizainiski uzlabot konsoles izskatu (piemēram nomainī background krāsu, teksta krāsu) /Paula/ /Jānis/
-
-Uztaisīt, lai visu laiku vienā vietā ir redzami atminētie burti (pie veikmsīga gadījuma, lai nelēkā) done!
 
 +
 
@@ -24,3 +17,6 @@ sql lihte - db, kas strādā ar txt failiem
 https://docs.microsoft.com/en-us/ef/core/get-started/overview/first-app?tabs=netcore-cli
 
 Padomāt par formām /Kurš grib/
+
+trycatch bloki - citur (nesaistīti ar apakšējo) - katrs kaut kur mēģina ielikt 
+exeption class - konkrētai kļūdai vienā vietā /Austra/
