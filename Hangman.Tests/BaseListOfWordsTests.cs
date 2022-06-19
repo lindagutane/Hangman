@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xunit;
 
-//namespace Hangman.Tests
-//{
-//    public class BaseListOfWordsTests
-//    {
+namespace Hangman.Tests
+{
+    public class BaseListOfWordsTests
+    {
 
-//        public void LoadListOfWords_WhenCorrectStreamReader_ThenReturnsCorrectStreamReader(string tries, string result)
-//        {
-//            var response = BaseListOfWords.LoadListOfWords(tries);
+        [Theory]
+        [InlineData("hello", "bu")]
+        public void GetRandomWord_WhenGetsListOfWords_ThenReturnsRandomWord(params string[] words)
+        {
+            var wordsList = words.ToList();
 
-//            Xunit.Assert.Equal(result, (IEnumerable<char>)response);
-        
-//        }
+            string response = BaseListOfWords.GetRandomWord(wordsList);
 
-
-//    }
-//}
+            Assert.Contains(response, wordsList);
+        }
+    }
+}
